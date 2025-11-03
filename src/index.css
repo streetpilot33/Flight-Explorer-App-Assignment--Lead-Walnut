@@ -1,0 +1,81 @@
+@import './styles/custom.css';
+
+:root {
+  --primary-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --primary-text: #1e293b;
+  --secondary-text: #64748b;
+  --accent-blue: #2563eb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+/* Dark theme base */
+:root.dark body {
+  background-color: #0b1020;
+  color: #eef2ff;
+}
+
+/* Enhanced Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Better Typography */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+}
+
+/* Smooth Transitions */
+button, a {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Remove Safari's Default Styles */
+input,
+textarea,
+button,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Improved Mobile Tap Targets */
+@media (max-width: 640px) {
+  button,
+  a,
+  input,
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Custom Selection Color */
+::selection {
+  background-color: #bfdbfe;
+  color: #1e40af;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 3D perspective utility */
+.perspective-1000 { perspective: 1000px; }
